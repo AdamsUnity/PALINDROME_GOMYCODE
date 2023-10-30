@@ -1,0 +1,41 @@
+ALGORITHM algorithm_name
+VAR
+    word: STRING = "Kayak"
+    reversedWord; STRING
+BEGIN
+    reversedWord = reserve_string(word)
+
+// check if the word contains s single character of an empty space
+IF (word.length < 2 OR word = "") THEN
+   write(word + " " + " is a palindrome")
+END_IF
+
+
+// check the ending character in each word against each other
+IF (word[word.length - 1] = reversedWord[reversedWord.length - 1] ) THEN
+  
+
+// compare the reversed string against each other to check if the word is a palindrome
+
+IF (word = reversedWord) THEN
+    write(word + " " + " is a palindrome")
+
+ELSE
+    write(word + " " + " is  not a palindrome")
+END_IF
+END
+
+// A function to reverse a string
+
+
+FUNCTION reserve_string(word) : STRING
+VAR
+    testingString: STRING = ' ';
+BEGIN
+// we will decrement from the word._length -1 until it is less-thanor equal to zero 
+    FOR i FROM word.length - 1 TO 0 STEP i == DO
+        testString = testString + word[i]
+    END_FOR
+
+    RETURN testString;
+END
